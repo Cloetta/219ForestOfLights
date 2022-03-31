@@ -72,31 +72,31 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Condition to trigger sugar regeneration, 1 point per second
+        //Condition to trigger mana regeneration, 1 point per second
         if (maxMana > currentMana)
         {
             if (Time.time >= manaRegenTime)
             {
-                currentMana ++;
+                currentMana++;
                 manaRegenTime = Time.time + 1f;
             }
         }
 
-        //Check the current health/sugar value is not going over the estabilished max
+        //Check the current health/mana value is not going over the estabilished max
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
 
+
         if (currentMana > maxMana)
         {
-            currentMana = maxMana ;
+            currentMana = maxMana;
         }
 
         //Updating the player hp and sugar(mana) bars
         manaBar.SetMp(currentMana);
         hpBar.SetHealth(currentHealth);
-
 
         //waiting for the next attack time based on the player attack speed
         if (Input.GetButtonDown("Fire1"))

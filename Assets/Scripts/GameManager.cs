@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     //Static instance of GameManager which allows it to be accessed by any other script
     public static GameManager instance = null;
 
-    bool isGameOver = false;
+    bool isGameOver;
 
     public int fireflies;
     public int lanterns;
@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
         lanternsInScene = GameObject.FindGameObjectsWithTag("Lantern");
         enemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
 
+        isGameOver = false;
+
     }
 
     private void Update()
@@ -63,6 +65,7 @@ public class GameManager : MonoBehaviour
         if(PlayerStats.currentHP <= 0)
         {
             isGameOver = true;
+            
         }
 
 
